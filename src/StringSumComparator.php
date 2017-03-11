@@ -14,15 +14,18 @@ class StringSumComparator
         return $this->sum($a) === $this->sum($b);
     }
 
-    private function sum($string)
+    private function sum($source)
     {
         $sum = 0;
 
         $from = ord('A');
         $to = ord('Z');
 
-        foreach (str_split(strtoupper($string)) as $letter) {
-            $ord = ord($letter);
+        $length = strlen($source);
+        $string = strtoupper($source);
+
+        for ($index = 0; $index < $length; ++$index) {
+            $ord = ord($string[$index]);
 
             if ($ord < $from || $ord > $to) {
                 return 0;
