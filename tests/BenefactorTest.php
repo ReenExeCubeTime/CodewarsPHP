@@ -2,9 +2,9 @@
 
 namespace ReenExe\CodewarsPHP\Tests;
 
-use Doctrine\Instantiator\Exception\InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use ReenExe\CodewarsPHP\Benefactor;
+use InvalidArgumentException;
 
 class BenefactorTest extends TestCase
 {
