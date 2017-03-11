@@ -3,5 +3,13 @@
     "description": "Play",
     "type": "project",
     "license": "MIT",
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ReenExe\\CodewarsPHP\\": "src"
+        }
+    }
 }
