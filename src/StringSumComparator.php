@@ -16,6 +16,21 @@ class StringSumComparator
 
     private function sum($string)
     {
-        return array_sum(array_map('ord', str_split(strtoupper($string))));
+        $sum = 0;
+
+        $from = ord('A');
+        $to = ord('Z');
+
+        foreach (str_split(strtoupper($string)) as $letter) {
+            $ord = ord($letter);
+
+            if ($ord < $from || $ord > $to) {
+                return 0;
+            }
+
+            $sum += $ord;
+        }
+
+        return $sum;
     }
 }
