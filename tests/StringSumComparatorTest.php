@@ -2,10 +2,15 @@
 
 namespace ReenExe\CodewarsPHP\Tests;
 
-class StringSumComparatorTest
+use PHPUnit\Framework\TestCase;
+use ReenExe\CodewarsPHP\StringSumComparator;
+
+class StringSumComparatorTest extends TestCase
 {
     public function testExample()
     {
-        $this->assertSame(true, compare("AD", "BC"));
+        $comparator = new StringSumComparator();
+        $this->assertSame(true, $comparator->compare('AD', 'BC'));
+        $this->assertSame(true, $comparator->compare('abc', 'CBA'));
     }
 }
