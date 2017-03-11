@@ -1,0 +1,7 @@
+{
+    "name": "reenexe/codewars-php",
+    "description": "Play",
+    "type": "project",
+    "license": "MIT",
+    "require": {}
+}
