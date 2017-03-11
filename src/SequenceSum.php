@@ -12,6 +12,8 @@ class SequenceSum
     {
         $range = range(0, $count);
 
-        return implode('+', $range) . ' = ' . array_sum($range);
+        $sum = (1 + $count) * $count / 2;
+
+        return implode('+', $range) . ' = ' . $sum;
     }
 }
