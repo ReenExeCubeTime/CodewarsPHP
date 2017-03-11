@@ -3,12 +3,14 @@
 namespace ReenExe\CodewarsPHP\Tests;
 
 use PHPUnit\Framework\TestCase;
+use ReenExe\CodewarsPHP\ArrayCutter;
 
 class ArrayCutterTest extends TestCase
 {
     public function testThatSomethingShouldHappen() {
-        $this->assertEquals([[1,2],[3,4],[5]], makeParts([1,2,3,4,5], 2));
-        $this->assertEquals([[1],[2],[3]], makeParts([1,2,3], 1));
-        $this->assertEquals([[1,2,3,4,5]], makeParts([1,2,3,4,5], 10));
+        $cutter = new ArrayCutter();
+        $this->assertSame([[1,2],[3,4],[5]], $cutter->cut([1,2,3,4,5], 2));
+        $this->assertSame([[1],[2],[3]], $cutter->cut([1,2,3], 1));
+        $this->assertSame([[1,2,3,4,5]], $cutter->cut([1,2,3,4,5], 10));
     }
 }

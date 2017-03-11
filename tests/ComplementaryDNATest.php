@@ -10,11 +10,11 @@ class ComplementaryDNATest extends TestCase
     public function testExamples()
     {
         $complementary = new ComplementaryDNA();
-        $this->assertEquals('TTTT', $complementary->strand('AAAA'));
-        $this->assertEquals('AAAA', $complementary->strand('TTTT'));
-        $this->assertEquals('TAACG', $complementary->strand('ATTGC'));
-        $this->assertEquals('ATTGC', $complementary->strand('TAACG'));
-        $this->assertEquals('CATA', $complementary->strand('GTAT'));
-        $this->assertEquals('GTAT', $complementary->strand('CATA'));
+        $this->assertSame('TTTT', $complementary->strand('AAAA'));
+        $this->assertSame('AAAA', $complementary->strand('TTTT'));
+        $this->assertSame('TAACG', $complementary->strand('ATTGC'));
+        $this->assertSame('ATTGC', $complementary->strand('TAACG'));
+        $this->assertSame('CATA', $complementary->strand('GTAT'));
+        $this->assertSame('GTAT', $complementary->strand('CATA'));
     }
 }
