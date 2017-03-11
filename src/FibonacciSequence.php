@@ -2,9 +2,10 @@
 
 namespace ReenExe\CodewarsPHP;
 
-class TribonacciSequence
+class FibonacciSequence
 {
     public function calculate($signature, $count)
     {
+
     }
 }
