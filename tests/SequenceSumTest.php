@@ -11,6 +11,6 @@ class SequenceSumTest extends TestCase
     {
         $sum = new SequenceSum();
 
-        $this->assertEquals('0+1+2+3+4+5+6 = 21', $sum->show(6));
+        $this->assertSame('0+1+2+3+4+5+6 = 21', $sum->show(6));
     }
 }
