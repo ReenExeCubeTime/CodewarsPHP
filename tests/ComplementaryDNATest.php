@@ -3,16 +3,18 @@
 namespace ReenExe\CodewarsPHP\Tests;
 
 use PHPUnit\Framework\TestCase;
+use ReenExe\CodewarsPHP\ComplementaryDNA;
 
 class ComplementaryDNATest extends TestCase
 {
     public function testExamples()
     {
-        $this->assertEquals('TTTT', DNA_strand('AAAA'));
-        $this->assertEquals('AAAA', DNA_strand('TTTT'));
-        $this->assertEquals('TAACG', DNA_strand('ATTGC'));
-        $this->assertEquals('ATTGC', DNA_strand('TAACG'));
-        $this->assertEquals('CATA', DNA_strand('GTAT'));
-        $this->assertEquals('GTAT', DNA_strand('CATA'));
+        $complementary = new ComplementaryDNA();
+        $this->assertEquals('TTTT', $complementary->strand('AAAA'));
+        $this->assertEquals('AAAA', $complementary->strand('TTTT'));
+        $this->assertEquals('TAACG', $complementary->strand('ATTGC'));
+        $this->assertEquals('ATTGC', $complementary->strand('TAACG'));
+        $this->assertEquals('CATA', $complementary->strand('GTAT'));
+        $this->assertEquals('GTAT', $complementary->strand('CATA'));
     }
 }
