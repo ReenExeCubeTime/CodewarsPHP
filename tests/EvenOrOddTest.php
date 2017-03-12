@@ -3,14 +3,16 @@
 namespace ReenExe\CodewarsPHP\Tests;
 
 use PHPUnit\Framework\TestCase;
+use ReenExe\CodewarsPHP\EvenOrOdd;
 
-class EvenOrOddTest extends TestCase
+class Test extends TestCase
 {
     public function testExamples()
     {
-        $this->assertEquals('Even', even_or_odd(2));
-        $this->assertEquals('Even', even_or_odd(0));
-        $this->assertEquals('Odd', even_or_odd(7));
-        $this->assertEquals('Odd', even_or_odd(1));
+        $evenOrOdd = new EvenOrOdd();
+        $this->assertEquals('Even', $evenOrOdd->solve(2));
+        $this->assertEquals('Even', $evenOrOdd->solve(0));
+        $this->assertEquals('Odd', $evenOrOdd->solve(7));
+        $this->assertEquals('Odd', $evenOrOdd->solve(1));
     }
 }
