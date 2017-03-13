@@ -6,17 +6,12 @@ class OrganiseDuplicateNumbers
 {
     public function group(array $numbers)
     {
-        $map = array_fill_keys($numbers, 0);
+        $map = array_fill_keys($numbers, []);
 
         foreach ($numbers as $number) {
-            $map[$number] += 1;
+            $map[$number][] = $number;
         }
 
-        $result = [];
-        foreach ($map as $number => $count) {
-            $result[] = array_fill(0, $count, $number);
-        }
-
-        return $result;
+        return array_values($map);
     }
 }
