@@ -12,8 +12,20 @@ class LengthOfMissingArray
 
         $counts = array_map('count', $arrayOfArrays);
 
-        $range = range(min($counts), max($counts));
+        $from = min($counts);
 
-        return current(array_diff($range, $counts));
+        if ($from === 0) {
+            return 0;
+        }
+
+        $range = range($from, max($counts));
+
+        $missing = current(array_diff($range, $counts));
+
+        $counts[] = $missing;
+
+        sort($counts);
+
+        return $range === $counts ? $missing : 0;
     }
 }
