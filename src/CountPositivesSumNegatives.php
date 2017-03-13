@@ -6,6 +6,10 @@ class CountPositivesSumNegatives
 {
     public function sum(array $numbers)
     {
+        if (empty($numbers)) {
+            return [];
+        }
+
         $positive = 0;
         $negative = 0;
 
