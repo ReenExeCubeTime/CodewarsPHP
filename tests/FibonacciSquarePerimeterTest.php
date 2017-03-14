@@ -3,13 +3,15 @@
 namespace ReenExe\CodewarsPHP\Tests;
 
 use PHPUnit\Framework\TestCase;
+use ReenExe\CodewarsPHP\FibonacciSquarePerimeter;
 
 class FibonacciSquarePerimeterTest extends TestCase
 {
     public function testBasics()
     {
-        $this->assertSame(perimeter(5), 80);
-        $this->assertSame(perimeter(7), 216);
-        $this->assertSame(perimeter(70), 3226062132197568);
+        $perimeter = new FibonacciSquarePerimeter();
+        $this->assertSame($perimeter->calculate(5), 80);
+        $this->assertSame($perimeter->calculate(7), 216);
+        $this->assertSame($perimeter->calculate(70), 3226062132197568);
     }
 }
