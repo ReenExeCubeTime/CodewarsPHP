@@ -26,6 +26,6 @@ class SumStrings
 
         $rest = implode('', array_reverse($sequence));
 
-        return $accumulator ? $accumulator . $rest : $rest;
+        return ltrim($accumulator ? $accumulator . $rest : $rest, '0');
     }
 }
