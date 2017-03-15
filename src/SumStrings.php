@@ -6,16 +6,26 @@ class SumStrings
 {
     public function sum($a, $b)
     {
-        $aLength = strlen($a);
-        $bLength = strlen($b);
-        $commonLength = min($aLength, $bLength);
+        $max = max(strlen($a), strlen($b));
 
-        $common = substr($a, 0, -$commonLength)
-                . substr($b, 0, -$commonLength);
+        $aFull = str_pad($a, $max, '0', STR_PAD_LEFT);
+        $bFull = str_pad($b, $max, '0', STR_PAD_LEFT);
 
-        $aRest = substr($a, -$commonLength);
-        $bRest = substr($b, -$commonLength);
+        $sequence = [];
+        $accumulator = 0;
+        for ($index = $max - 1; $index > -1; --$index) {
+            $number = $aFull[$index] + $bFull[$index] + $accumulator;
+            if ($number > 9) {
+                $number -= 9;
+                $accumulator = 1;
+            } else {
+                $accumulator = 0;
+            }
+            $sequence[] = $number;
+        }
 
-        return $common . ($aRest + $bRest);
+        $rest = implode('', array_reverse($sequence));
+
+        return $accumulator ? $accumulator . $rest : $rest;
     }
 }
