@@ -16,7 +16,7 @@ class SumStrings
         for ($index = $max - 1; $index > -1; --$index) {
             $number = $aFull[$index] + $bFull[$index] + $accumulator;
             if ($number > 9) {
-                $number -= 9;
+                $number -= 10;
                 $accumulator = 1;
             } else {
                 $accumulator = 0;

@@ -11,6 +11,7 @@ class SumStringsTest extends TestCase
     {
         $summer = new SumStrings();
         $this->assertSame('579', $summer->sum('123', '456'));
+        $this->assertSame('1001', $summer->sum('500', '501'));
         $this->assertSame('14579', $summer->sum('12123', '2456'));
         $this->assertSame(
             str_repeat('5', 100),
