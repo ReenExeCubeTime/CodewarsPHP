@@ -3,11 +3,14 @@
 namespace ReenExe\CodewarsPHP\Tests;
 
 use PHPUnit\Framework\TestCase;
+use ReenExe\CodewarsPHP\IPValidator;
 
 class ValidIpTest extends TestCase
 {
     public function testValid()
     {
+        $validator = new IPValidator();
+
         $valid = [
             '0.0.0.0',
             '255.255.255.255',
@@ -16,12 +19,9 @@ class ValidIpTest extends TestCase
         ];
 
         foreach ($valid as $input) {
-            $this->assertTrue(isValidIP($input), "Failed asserting that '$input' is a valid IP4 address.");
+            $this->assertTrue($validator->valid($input));
         }
-    }
 
-    public function testInvalid()
-    {
         $invalid = [
             '',
             'abc.def.ghi.jkl',
@@ -30,7 +30,7 @@ class ValidIpTest extends TestCase
         ];
 
         foreach ($invalid as $input) {
-            $this->assertFalse(isValidIP($input), "Failed asserting that '$input' is an invalid IP4 address.");
+            $this->assertFalse($validator->valid($input));
         }
     }
 }
